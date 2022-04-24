@@ -1,0 +1,16 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: Dorbiancr
+  namespace:\
+subjects:
+  - kind: User
+    name: PUT YOUR CR HERE
+    apiGroup: 'rbac.authorization.k8s.io'
+  - kind: ServiceAccount
+    name: NAME-user
+    namespace: kubernetes-dashboard
+roleRef:
+  kind: ClusterRole
+  name: PUT YOUR CR HERE
+  apiGroup: 'rbac.authorization.k8s.io'

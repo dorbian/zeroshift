@@ -1,0 +1,45 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-cluster
+spec:
+  hosts:
+  - ssh:
+      address: 192.168.0.160
+      user: core
+      port: 22
+      keyPath: /home/dorbian/.ssh/id_dorbian
+    role: controller
+  - ssh:
+      address: 192.168.0.161
+      user: core
+      port: 22
+      keyPath: /home/dorbian/.ssh/id_dorbian
+    role: controller
+  - ssh:
+      address: 192.168.0.162
+      user: core
+      port: 22
+      keyPath: /home/dorbian/.ssh/id_dorbian
+    role: controller
+  - ssh:
+      address: 192.168.0.163
+      user: core
+      port: 22
+      keyPath: /home/dorbian/.ssh/id_dorbian
+    role: worker
+  - ssh:
+      address: 192.168.0.164
+      user: core
+      port: 22
+      keyPath: /home/dorbian/.ssh/id_dorbian
+    role: worker
+  - ssh:
+      address: 192.168.0.165
+      user: core
+      port: 22
+      keyPath: /home/dorbian/.ssh/id_dorbian
+    role: worker
+  k0s:
+    version: 1.23.5+k0s.0
+    dynamicConfig: false
